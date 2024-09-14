@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
 
-class MakeAccButton extends StatelessWidget {
+class DepConButton extends StatelessWidget {
 
   final Function()? onTap;
 
-  const MakeAccButton({super.key, required this.onTap});
+  const DepConButton({super.key, required this.onTap});
 
   // This widget is the root of your application.
   @override
@@ -14,14 +13,14 @@ class MakeAccButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(10),
-        margin: EdgeInsets.symmetric(horizontal: 10),
+        margin: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(4)
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(8)
           ),
         child: const Center(
           child: Text(
-            "New Account",
+            "Ajukan Deposito",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
