@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
 
-class LoginButton extends StatelessWidget {
+class DepositoButton extends StatelessWidget {
 
   final Function()? onTap;
 
-  const LoginButton({super.key, required this.onTap});
+  const DepositoButton({super.key, required this.onTap});
 
   // This widget is the root of your application.
   @override
@@ -13,15 +12,15 @@ class LoginButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(25),
-        margin: EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.all(10),
+        margin: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.blue,
           borderRadius: BorderRadius.circular(8)
           ),
         child: const Center(
           child: Text(
-            "Sign in",
+            "Deposito",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

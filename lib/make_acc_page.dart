@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/login_page.dart';
-import 'package:mobile_banking/make_acc_button.dart';
+import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
 
 
 class MakeAccPage  extends StatelessWidget{

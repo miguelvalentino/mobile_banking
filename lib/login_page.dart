@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/account_info.dart';
-import 'package:mobile_banking/login_button.dart';
-import 'package:mobile_banking/make_acc_button.dart';
+import 'package:mobile_banking/buttonsfile/login_button.dart';
+import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
 import 'package:mobile_banking/make_acc_page.dart';
 
 class LoginPage extends StatelessWidget {
