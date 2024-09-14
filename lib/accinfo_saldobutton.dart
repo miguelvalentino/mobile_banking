@@ -3,7 +3,7 @@ import 'package:mobile_banking/saldo.dart';
 import 'package:popover/popover.dart';
 
 class AccinfoSaldobutton extends StatelessWidget {
-  const AccinfoSaldobutton({super.key});
+  const AccinfoSaldobutton({super.key, required Null Function() onTap});
 
   @override
   Widget build(BuildContext context) {

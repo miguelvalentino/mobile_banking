@@ -37,7 +37,7 @@ class AccInfo extends StatelessWidget {
             ),
 
             
-            ),
+              ]),
           ),
         ),
       ),
