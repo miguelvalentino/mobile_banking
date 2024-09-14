@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/login_button.dart';
+import 'package:mobile_banking/login_page.dart';
 import 'package:mobile_banking/make_acc_button.dart';
-import 'package:mobile_banking/make_acc_page.dart';
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
 
 
-void test() {
+class MakeAccPage  extends StatelessWidget{
+  const MakeAccPage({super.key});
+
+  void test() {
   print("punten");
  }
 
@@ -38,7 +37,7 @@ void test() {
               SizedBox(height: 50,),
         
               //Selamat datang
-              Text('Selamat datang ke BankMik!',
+              Text('Buat akun',
               style: TextStyle(
                 color: const Color.fromARGB(255, 14, 128, 228),
                 fontSize: 16,
@@ -83,11 +82,23 @@ void test() {
               ),
             ),
             
-            const SizedBox(height: 20,),
-              //sign in
-            LoginButton(
-              onTap: test,
-            ),
+            const SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),   
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade400,
+                  filled: true,
+                ),
+              ),
+            ),            
+
             
               //buat akun
             const SizedBox(height: 20,),
@@ -95,13 +106,12 @@ void test() {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MakeAccPage(),
+                  MaterialPageRoute(builder: (context) => LoginPage(),
                   ),
                 );
               },
-            ),
-            ],
-            ),
+            )
+            ],),
           ),
         ),
       ),
