@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/account_info.dart';
 import 'package:mobile_banking/login_button.dart';
 import 'package:mobile_banking/make_acc_button.dart';
 import 'package:mobile_banking/make_acc_page.dart';
@@ -86,7 +87,13 @@ void test() {
             const SizedBox(height: 20,),
               //sign in
             LoginButton(
-              onTap: test,
+              onTap:() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AccInfo(),
+                  ),
+                );
+              },
             ),
             
               //buat akun
