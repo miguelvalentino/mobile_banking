@@ -3,6 +3,7 @@ import 'package:mobile_banking/testing_buttons.dart';
 import 'package:mobile_banking/buttonsfile/login_button.dart';
 import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
 import 'package:mobile_banking/make_acc_page.dart';
+import 'package:mobile_banking/sign_in_screen.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -94,7 +95,8 @@ class LoginPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => TransfersPage(),
+                        builder: (context) => SignInScreen(),
+
                       ),
                     );
                   },
