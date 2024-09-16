@@ -1,29 +1,53 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
-class BankHomePage extends StatelessWidget {
+
+class BankHomePage extends StatefulWidget {
+  const BankHomePage({super.key});
+
+  @override
+  State<BankHomePage>createState()=>_BankHomePageState();
+}
+
+class _BankHomePageState extends State<BankHomePage>{
+  int curr=0;
+  final List<Widget>pages=[
+    const HomeScreen(),
+    const Placeholder(),//transaksi
+    const Placeholder(),//notifikasi
+    const Placeholder(),//profile
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Akun Bank Anda'),
-      ),
-      body: Container(
-        // Apply the BoxDecoration to the Container
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/pixelart.jpeg"), // Location of the image
-            fit: BoxFit.cover, // Ensures the image covers the entire container
+      body:pages[curr],
+      bottomNavigationBar:NavigationBar(
+        onDestinationSelected:(int index) {
+          setState((){
+            curr=index;
+          });
+        },
+        indicatorColor:Colors.black,
+        selectedIndex:curr,
+        destinations:const[
+          NavigationDestination(
+            icon:Icon(Icons.home),
+            label:'Home',
           ),
-        ),
-        child: Center(
-          child: Text(
-            'Selamat datang di halaman akun bank Anda!',
-            style: TextStyle(
-                fontSize: 25,
-                color:
-                    Colors.red), // Optional: Adjust text color for visibility
+          NavigationDestination(
+            icon: Icon(Icons.wallet),
+            label: 'Transactions',
           ),
-        ),
+          NavigationDestination(
+            icon: Icon(Icons.notifications),
+            label: 'notification',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
