@@ -19,8 +19,8 @@ class LoginPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/pixelart.jpeg"), // Lokasi gambar
-            fit: BoxFit.cover, // Mengatur agar gambar memenuhi layar
+            image: AssetImage("assets/BG_bank.png"), 
+            fit: BoxFit.cover, 
           ),
         ),
         child: SafeArea(
@@ -56,6 +56,7 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
                     decoration: InputDecoration(
+                      hintText: 'Username',
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
                       ),
@@ -73,7 +74,9 @@ class LoginPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
+                      hintText: 'Password',
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.white),
                       ),
@@ -103,6 +106,17 @@ class LoginPage extends StatelessWidget {
                 ),
 
                 //buat akun
+                const SizedBox(
+                  height: 35,
+                ),
+                Text(
+                  'Tidak Punya Akun? Daftar sekarang!',
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 14, 128, 228),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
