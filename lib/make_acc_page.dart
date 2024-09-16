@@ -10,7 +10,6 @@ class MakeAccPage  extends StatelessWidget{
   print("punten");
  }
 
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,8 +17,8 @@ class MakeAccPage  extends StatelessWidget{
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/pixelart.jpeg"), // Lokasi gambar
-            fit: BoxFit.cover, // Mengatur agar gambar memenuhi layar
+            image: AssetImage("assets/BG_bank.png"), 
+            fit: BoxFit.cover, 
           ),
         ),
         child: SafeArea(
@@ -36,7 +35,7 @@ class MakeAccPage  extends StatelessWidget{
               
               SizedBox(height: 50,),
         
-              //Selamat datang
+              //tulisan buat akun
               Text('Buat akun',
               style: TextStyle(
                 color: const Color.fromARGB(255, 14, 128, 228),
@@ -47,11 +46,31 @@ class MakeAccPage  extends StatelessWidget{
         
               const SizedBox(height: 25,),
         
+              //Email
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.white),   
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  fillColor: Colors.grey.shade400,
+                  filled: true,
+                ),
+              ),
+            ),
+            
+            const SizedBox(height: 15),
               //username
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
+                  hintText: 'username',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),   
                   ),
@@ -64,29 +83,13 @@ class MakeAccPage  extends StatelessWidget{
               ),
             ),
             
-            const SizedBox(height: 15),
-              //password
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
-                  ),
-                  fillColor: Colors.grey.shade400,
-                  filled: true,
-                ),
-              ),
-            ),
-            
+            //pasword
             const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
+                  hintText: 'Password',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),   
                   ),
