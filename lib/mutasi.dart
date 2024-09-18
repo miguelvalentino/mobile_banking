@@ -22,6 +22,10 @@ class MutasiPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Mutasi Rekening'),
           backgroundColor: Colors.blue,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () => Navigator.of(context).maybePop(),
+          ),
         ),
         body: Container(
           decoration: const BoxDecoration(
@@ -47,6 +51,7 @@ class MutasiPage extends StatelessWidget {
                   trailing: Text(
                     mutasi['amount']!,
                     style: TextStyle(
+                      color: mutasi['amount']!.startsWith('+') ? Colors.green : Colors.red,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -56,7 +61,6 @@ class MutasiPage extends StatelessWidget {
           ),
         ),
       ),
-      
     );
   }
 }
