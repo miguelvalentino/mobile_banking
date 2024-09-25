@@ -5,6 +5,7 @@ import 'package:mobile_banking/buttonsfile/login_button.dart';
 import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
 import 'package:mobile_banking/make_acc_page.dart';
 import 'package:mobile_banking/sign_in_screen.dart';
+import 'package:mobile_banking/buttonsfile/make_acc_button1.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -121,7 +122,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                MakeAccButton(
+                MakeAccButton1(
                   onTap: () {
                     Navigator.push(
                       context,

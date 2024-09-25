@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/login_page.dart';
 import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
-import 'package:mobile_banking/make_acc_page2.dart';
 
 
-class MakeAccPage  extends StatelessWidget{
-  const MakeAccPage({super.key});
+class MakeAccPage2 extends StatefulWidget {
+  const MakeAccPage2({super.key});
 
-  void test() {
-  print("punten");
- }
+  @override
+  _MakeAccPageState createState() => _MakeAccPageState();
+}
+
+class _MakeAccPageState extends State<MakeAccPage2> {
+  bool _isChecked = false;
+
+  void _onCheckboxChanged(bool? value) {
+    setState(() {
+      _isChecked = value ?? false;
+    });
+  }
+  
 
   // This widget is the root of your application.
   @override
@@ -47,12 +56,12 @@ class MakeAccPage  extends StatelessWidget{
         
               const SizedBox(height: 25,),
         
-              //Email
+              //Username
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Email',
+                  hintText: 'UserName',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),   
                   ),
@@ -66,12 +75,12 @@ class MakeAccPage  extends StatelessWidget{
             ),
             
             const SizedBox(height: 15),
-              //username
+              //
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Nama Lengkap',
+                  hintText: 'Pekerjaan',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),   
                   ),
@@ -90,7 +99,7 @@ class MakeAccPage  extends StatelessWidget{
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'NIK',
+                  hintText: 'Password',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),   
                   ),
@@ -103,13 +112,13 @@ class MakeAccPage  extends StatelessWidget{
               ),
             ),            
 
-            //no telp
+            //confirm pw
             const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'No Telpon',
+                  hintText: 'Confirm Password',
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.white),   
                   ),
@@ -122,6 +131,19 @@ class MakeAccPage  extends StatelessWidget{
               ),
             ), 
 
+            const SizedBox( height: 20,),
+           Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: CheckboxListTile(
+                    title: Text(
+                      "Saya menyetujui syarat dan ketentuan",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    value: _isChecked,
+                    onChanged: _onCheckboxChanged,
+                    controlAffinity: ListTileControlAffinity.leading,
+                  ),
+                ),
 
               //buat akun
             const SizedBox(height: 20,),
@@ -129,7 +151,7 @@ class MakeAccPage  extends StatelessWidget{
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MakeAccPage2(),
+                  MaterialPageRoute(builder: (context) => LoginPage(),
                   ),
                 );
               },
