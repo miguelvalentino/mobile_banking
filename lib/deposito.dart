@@ -13,6 +13,14 @@ class DepoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          title: const Text('Mutasi Rekening'),
+          backgroundColor: Colors.blue,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () => Navigator.of(context).maybePop(),
+          ),
+        ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -51,17 +59,6 @@ class DepoPage extends StatelessWidget {
                 ),
                 const SizedBox(
                   height: 20,
-                ),
-                // TOMBOL EXIT SMEENTARA
-                LoginButton(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    );
-                  },
                 ),
               ],
             ),

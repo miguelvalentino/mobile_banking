@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/account_info.dart';
 import 'package:mobile_banking/payment.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,10 +25,10 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(builder:(context)=>const Placeholder())
               );
             }),
-            GridButton(context,Icons.question_mark_rounded,'plcaeholder',() {
+            GridButton(context,Icons.question_mark_rounded,'Account Info',() {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder:(context)=>const Placeholder())
+                MaterialPageRoute(builder:(context)=>const AccInfo())
               );
             }),
             GridButton(context,Icons.question_mark_rounded,'Payment',() {
