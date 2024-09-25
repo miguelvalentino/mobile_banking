@@ -20,7 +20,7 @@ class MakeAccButton extends StatelessWidget {
           ),
         child: const Center(
           child: Text(
-            "Next",
+            "New Account",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

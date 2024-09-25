@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MakeAccButton extends StatelessWidget {
+class MakeAccButton1 extends StatelessWidget {
 
   final Function()? onTap;
 
-  const MakeAccButton({super.key, required this.onTap});
+  const MakeAccButton1({super.key, required this.onTap});
 
   // This widget is the root of your application.
   @override
@@ -20,7 +20,7 @@ class MakeAccButton extends StatelessWidget {
           ),
         child: const Center(
           child: Text(
-            "Next",
+            "Buat Sekarang!",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
