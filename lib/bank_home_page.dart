@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
+import 'transfer.dart';
+import 'account_info.dart';
+import 'notification.dart';
 
 
 class BankHomePage extends StatefulWidget {
@@ -13,9 +16,9 @@ class _BankHomePageState extends State<BankHomePage>{
   int curr=0;
   final List<Widget>pages=[
     const HomeScreen(),
-    const Placeholder(),//transaksi
-    const Placeholder(),//notifikasi
-    const Placeholder(),//profile
+    const TransferPage(),//transaksi
+    const NotificationScreen(),//notifikasi
+    const AccInfo(),//profile
   ];
 
   @override
