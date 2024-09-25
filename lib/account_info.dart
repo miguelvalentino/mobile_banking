@@ -4,8 +4,6 @@ import 'package:mobile_banking/buttonsfile/accinfo_mutasibutton.dart';
 import 'package:mobile_banking/buttonsfile/accinfo_saldobutton.dart';
 import 'package:mobile_banking/deposito.dart';
 import 'package:mobile_banking/mutasi.dart';
-import 'package:mobile_banking/buttonsfile/payment_button.dart';
-import 'package:mobile_banking/payment.dart';
 
 
 void main(){
@@ -69,16 +67,6 @@ class AccInfo extends StatelessWidget {
               },
             ),
             const SizedBox(height: 50),
-
-            PaymentButton(
-              onTap:() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PaymentPage(),
-                  ),
-                );
-              },
-            )
 
 
               ]),
