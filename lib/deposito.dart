@@ -14,7 +14,7 @@ class DepoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Mutasi Rekening'),
+          title: const Text('Deposito'),
           backgroundColor: Colors.blue,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
