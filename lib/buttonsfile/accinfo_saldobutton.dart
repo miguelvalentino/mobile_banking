@@ -18,10 +18,10 @@ class AccinfoSaldobutton extends StatelessWidget {
       ),
       child: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 140), // padding dalam kotak
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 140), 
           decoration: BoxDecoration(
-            color: Colors.blue, // warna background kotak
-            borderRadius: BorderRadius.circular(10), // sudut kotak melengkung
+            color: const Color.fromARGB(255, 0, 89, 255), 
+            borderRadius: BorderRadius.circular(10), 
           ),
           child: const Text(
             "Info Saldo",
