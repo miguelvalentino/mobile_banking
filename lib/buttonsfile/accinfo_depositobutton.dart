@@ -15,7 +15,7 @@ class DepositoButton extends StatelessWidget {
         padding: EdgeInsets.all(10),
         margin: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: const Color.fromARGB(255, 0, 89, 255),
           borderRadius: BorderRadius.circular(8)
           ),
         child: const Center(

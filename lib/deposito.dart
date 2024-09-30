@@ -15,12 +15,12 @@ class DepoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: const Text('Deposito'),
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 0, 89, 255), 
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.of(context).maybePop(),
-          ),
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.of(context).maybePop(),
         ),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

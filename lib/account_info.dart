@@ -18,7 +18,7 @@ class AccInfo extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: const Text('Account Info'),
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 0, 89, 255),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).maybePop(),
@@ -35,7 +35,7 @@ class AccInfo extends StatelessWidget {
           child: Center(
             child: Column(
               children: [
-              const SizedBox(height: 200),
+              const SizedBox(height: 180),
 
 
             AccinfoSaldobutton(
