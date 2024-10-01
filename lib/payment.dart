@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PaymentPage extends StatelessWidget {
+class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
 
+  @override
+  _PaymentPageState createState() => _PaymentPageState();
+}
+
+class _PaymentPageState extends State<PaymentPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +29,13 @@ class PaymentPage extends StatelessWidget {
               // Tombol Pulsa
               ElevatedButton(
                 onPressed: () {
+                  _showPaymentOptions(context, 'Pulsa');
                 },
-                child: const Text('Pulsa (Rp100.000)'),
+                child: const Text('Pulsa'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 40, vertical: 20),
-                  backgroundColor: Colors.blue,
+                      horizontal: 150, vertical: 20),
+                  backgroundColor: Colors.lightBlueAccent,
                 ),
               ),
               const SizedBox(height: 20),
@@ -37,12 +43,13 @@ class PaymentPage extends StatelessWidget {
               // Tombol Internet
               ElevatedButton(
                 onPressed: () {
+                  _showPaymentOptions(context, 'Internet');
                 },
-                child: const Text('Internet (Rp100.000)'),
+                child: const Text('Internet'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 40, vertical: 20),
-                  backgroundColor: Colors.blue, 
+                      horizontal: 150, vertical: 20),
+                  backgroundColor: Colors.lightBlueAccent, 
                 ),
               ),
               const SizedBox(height: 20),
@@ -50,18 +57,116 @@ class PaymentPage extends StatelessWidget {
               // Tombol Pajak
               ElevatedButton(
                 onPressed: () {
+                  _showPaymentOptions(context, 'Pajak');
                 },
-                child: const Text('Pajak (Rp100.000)'),
+                child: const Text('Pajak'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 40, vertical: 20),
-                  backgroundColor: Colors.blue, 
+                      horizontal: 150, vertical: 20),
+                  backgroundColor: Colors.lightBlueAccent, 
                 ),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  void _showPaymentOptions(BuildContext context, String title) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.5, // 50% of the screen height
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Text('Pilih mau beli berapa untuk $title', 
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  children: const [
+                    _PriceButton(price: 'Rp.20.000'),
+                    _PriceButton(price: 'Rp.50.000'),
+                    _PriceButton(price: 'Rp.80.000'),
+                    _PriceButton(price: 'Rp.100.000'),
+                    _PriceButton(price: 'Rp.200.000'),
+                    _PriceButton(price: 'Rp.500.000'),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _PriceButton extends StatefulWidget {
+  final String price;
+
+  const _PriceButton({required this.price});
+
+  @override
+  __PriceButtonState createState() => __PriceButtonState();
+}
+
+class __PriceButtonState extends State<_PriceButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.lightBlueAccent,
+        borderRadius: BorderRadius.circular(8), // Sudut melingkar kecil
+      ),
+      child: ElevatedButton(
+        onPressed: () {
+          _showSuccessMessage(context);
+        },
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+        ),
+        child: Center(
+          child: Text(widget.price, style: const TextStyle(fontSize: 16)),
+        ),
+      ),
+    );
+  }
+
+  void _showSuccessMessage(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        Future.delayed(const Duration(seconds: 5), () {
+          if (mounted) {
+            Navigator.of(context).pop(); // Close the success dialog
+            Navigator.of(context).pop(); // Close the bottom sheet
+          }
+        });
+        return AlertDialog(
+          title: const Text('Pembayaran Berhasil'),
+          content: const Text('Pembayaran Anda telah berhasil.'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                if (mounted) {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                }
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
