@@ -49,7 +49,7 @@ class _MutasiPageState extends State<MutasiPage> {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Mutasi Rekening'),
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 0, 89, 255),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).maybePop(),
