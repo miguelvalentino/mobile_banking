@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'transfer.dart';
 import 'account_info.dart';
-import 'notification.dart';
+import 'screens/notification.dart';
 
 
 class BankHomePage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _BankHomePageState extends State<BankHomePage>{
   final List<Widget>pages=[
     const HomeScreen(),
     const TransferPage(),//transaksi
-    const NotificationScreen(),//notifikasi
+    NotificationScreen(),//notifikasi
     const AccInfo(),//profile
   ];
 
