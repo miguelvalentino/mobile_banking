@@ -39,8 +39,6 @@ class AccInfo extends StatelessWidget {
 
 
             AccinfoSaldobutton(
-              onTap:() {
-              },
             ),
 
             const SizedBox(height: 50),
