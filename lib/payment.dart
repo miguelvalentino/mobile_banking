@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_banking/buttonsfile/e_com_button.dart';
+import 'package:mobile_banking/e_commerce.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
@@ -66,6 +68,21 @@ class _PaymentPageState extends State<PaymentPage> {
                   backgroundColor: Colors.lightBlueAccent, 
                 ),
               ),
+
+                //sementara buat tombol ecom pln
+                const SizedBox(height: 20),
+                EComButton(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ECommerce(),
+
+                      ),
+                    );
+                  },
+                ),
+
             ],
           ),
         ),

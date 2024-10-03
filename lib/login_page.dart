@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/BG_bank.png"), 
+            image: AssetImage("assets/bg_baru.png"), 
             fit: BoxFit.cover, 
           ),
         ),
