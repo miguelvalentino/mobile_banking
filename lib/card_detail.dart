@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'detailed_card_view.dart';
 import 'package:mobile_banking/buttonsfile/detailed_card_view_button.dart';
+import 'delete_account.dart';
 
 class CardDetailPage extends StatelessWidget {
   @override
@@ -43,6 +44,41 @@ class CardDetailPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => DetailedViewPage()),
                 );
               },
+            ),
+            SizedBox(height: 20),
+            GestureDetector(
+              onTap: () async {
+                bool? result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DeleteAccountPage()),
+                );
+
+                if (result == true) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Akun berhasil dihapus'),
+                    ),
+                  );
+                }
+              },
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 0, 0),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Delete Account",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
