@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'transfer.dart';
-import 'account_info.dart';
+import 'card_detail.dart';
 import 'screens/notification.dart';
 
 
@@ -18,7 +18,7 @@ class _BankHomePageState extends State<BankHomePage>{
     const HomeScreen(),
     const TransferPage(),//transaksi
     NotificationScreen(),//notifikasi
-    const AccInfo(),//profile
+    CardDetailPage(),//profile
   ];
 
   @override
