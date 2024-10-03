@@ -40,7 +40,7 @@ class _DepoPageState extends State<DepoPage> {
           child: Center(
             child: Column(
               children: [
-                const SizedBox(height: 50),
+                const SizedBox(height: 200),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
