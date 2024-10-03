@@ -3,6 +3,7 @@ import 'package:mobile_banking/account_info.dart';
 import 'package:mobile_banking/payment.dart';
 import 'package:mobile_banking/buttonsfile/button_Daftar.dart';
 import 'package:mobile_banking/buttonsfile/button_Transfer.dart';
+import 'package:mobile_banking/page_ecom.dart';
 import 'daftar-transfer.dart';
 import 'transfer.dart';
 
@@ -23,20 +24,20 @@ class HomeScreen extends StatelessWidget {
           crossAxisSpacing: 15.0,
           mainAxisSpacing: 15.0,
           children: <Widget>[
-            GridButton(context, Icons.question_mark_rounded, 'Placeholder', () {
+            GridButton(context, Icons.shopping_bag_sharp, 'E-Commerce', () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Placeholder()),
+                MaterialPageRoute(builder: (context) => const PageEcom()),
               );
             }),
-            GridButton(context, Icons.question_mark_rounded, 'Account Info',
+            GridButton(context, Icons.account_circle, 'Account Info',
                 () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AccInfo()),
               );
             }),
-            GridButton(context, Icons.question_mark_rounded, 'Payment', () {
+            GridButton(context, Icons.payment, 'Payment', () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PaymentPage()),
