@@ -7,7 +7,7 @@ class CardDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Kartu'),
+        title: Text('Akun Saya'),
       ),
       body: Center(
         child: Column(
