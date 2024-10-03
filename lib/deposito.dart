@@ -40,7 +40,7 @@ class _DepoPageState extends State<DepoPage> {
           child: Center(
             child: Column(
               children: [
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: TextField(
@@ -54,9 +54,9 @@ class _DepoPageState extends State<DepoPage> {
                         borderSide: BorderSide(color: Colors.white),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade400),
+                        borderSide: BorderSide(color: Color.fromARGB(255, 0, 183, 255),),
                       ),
-                      fillColor: Colors.grey.shade400,
+                      fillColor: Colors.white,
                       filled: true,
                     ),
                   ),
