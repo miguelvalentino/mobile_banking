@@ -7,6 +7,10 @@ class ECommerce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Pembelian Token PLN"),
+        backgroundColor: Colors.blue, 
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

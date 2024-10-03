@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MakeAccButton2 extends StatelessWidget {
+class ButtonPln extends StatelessWidget {
 
   final Function()? onTap;
 
-  const MakeAccButton2({super.key, required this.onTap});
+  const ButtonPln({super.key, required this.onTap});
 
   // This widget is the root of your application.
   @override
@@ -13,14 +13,14 @@ class MakeAccButton2 extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(10),
-        margin: EdgeInsets.symmetric(horizontal: 10),
+        margin: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(4)
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(8)
           ),
         child: const Center(
           child: Text(
-            "New Account",
+            "Pembelian Token PLN",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

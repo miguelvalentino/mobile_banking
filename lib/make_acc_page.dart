@@ -15,14 +15,18 @@ class MakeAccPage  extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: Stack(
+        children: [
+          Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/BG_bank.png"), 
+            image: AssetImage("assets/bg_baru.png"), 
             fit: BoxFit.cover, 
           ),
         ),
-        child: SafeArea(
+        ),
+        SafeArea(
+          child: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
@@ -37,7 +41,7 @@ class MakeAccPage  extends StatelessWidget{
               SizedBox(height: 50,),
         
               //tulisan buat akun
-              Text('Buat akun',
+              Text('Buat Akun 1/2',
               style: TextStyle(
                 color: const Color.fromARGB(255, 14, 128, 228),
                 fontSize: 16,
@@ -54,12 +58,12 @@ class MakeAccPage  extends StatelessWidget{
                 decoration: InputDecoration(
                   hintText: 'Email',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),  
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),  
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -73,12 +77,12 @@ class MakeAccPage  extends StatelessWidget{
                 decoration: InputDecoration(
                   hintText: 'Nama Lengkap',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),    
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),  
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -92,12 +96,12 @@ class MakeAccPage  extends StatelessWidget{
                 decoration: InputDecoration(
                   hintText: 'NIK',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),  
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),  
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -111,12 +115,12 @@ class MakeAccPage  extends StatelessWidget{
                 decoration: InputDecoration(
                   hintText: 'No Telpon',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),    
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),  
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -137,6 +141,8 @@ class MakeAccPage  extends StatelessWidget{
             ],),
           ),
         ),
+        ),
+        ],
       ),
     );
   }

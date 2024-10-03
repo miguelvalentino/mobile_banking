@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/login_page.dart';
-import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
+import 'package:mobile_banking/buttonsfile/make_acc_button2.dart';
 
 
 class MakeAccPage2 extends StatefulWidget {
@@ -24,14 +24,18 @@ class _MakeAccPageState extends State<MakeAccPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: Stack(
+        children: [
+          Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/BG_bank.png"), 
+            image: AssetImage("assets/bg_baru.png"), 
             fit: BoxFit.cover, 
           ),
         ),
-        child: SafeArea(
+        ),
+        SafeArea(
+          child: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
@@ -46,7 +50,7 @@ class _MakeAccPageState extends State<MakeAccPage2> {
               SizedBox(height: 50,),
         
               //tulisan buat akun
-              Text('Buat akun',
+              Text('Buat Akun 2/2',
               style: TextStyle(
                 color: const Color.fromARGB(255, 14, 128, 228),
                 fontSize: 16,
@@ -61,14 +65,14 @@ class _MakeAccPageState extends State<MakeAccPage2> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'UserName',
+                  hintText: 'User Name',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -82,12 +86,12 @@ class _MakeAccPageState extends State<MakeAccPage2> {
                 decoration: InputDecoration(
                   hintText: 'Pekerjaan',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -101,12 +105,12 @@ class _MakeAccPageState extends State<MakeAccPage2> {
                 decoration: InputDecoration(
                   hintText: 'Password',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -120,12 +124,12 @@ class _MakeAccPageState extends State<MakeAccPage2> {
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),   
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: const Color.fromARGB(255, 0, 183, 255)),
                   ),
-                  fillColor: Colors.grey.shade400,
+                  fillColor: const Color.fromARGB(255, 255, 255, 255),
                   filled: true,
                 ),
               ),
@@ -147,7 +151,7 @@ class _MakeAccPageState extends State<MakeAccPage2> {
 
               //buat akun
             const SizedBox(height: 20,),
-            MakeAccButton(
+            MakeAccButton2(
               onTap: () {
                 Navigator.push(
                   context,
@@ -159,6 +163,8 @@ class _MakeAccPageState extends State<MakeAccPage2> {
             ],),
           ),
         ),
+         ),
+        ],
       ),
     );
   }
