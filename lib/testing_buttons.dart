@@ -9,14 +9,15 @@ class TransfersPage extends StatelessWidget {
   void test() {
     print("punten");
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/pixelart.jpeg"), // Lokasi gambar
-            fit: BoxFit.cover, // Mengatur agar gambar memenuhi layar
+            image: AssetImage("assets/pixelart.jpeg"),
+            fit: BoxFit.cover,
           ),
         ),
         child: SafeArea(
