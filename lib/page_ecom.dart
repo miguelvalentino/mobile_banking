@@ -10,7 +10,7 @@ class PageEcom extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("E-Commerce Page"),
-        backgroundColor: Colors.blue, // Sesuaikan dengan warna yang kamu inginkan
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -20,7 +20,7 @@ class PageEcom extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Column( // Use Column to structure multiple widgets
+          child: Column( 
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 20),
