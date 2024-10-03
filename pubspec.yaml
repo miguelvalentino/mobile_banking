@@ -69,7 +69,8 @@ flutter:
   - assets/pixelart.jpeg
   - assets/BG_bank.png
   - assets/bg_baru.png
-  
+  - assets/detail_kartu.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
