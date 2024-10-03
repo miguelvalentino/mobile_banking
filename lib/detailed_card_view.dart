@@ -5,7 +5,7 @@ class DetailedViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Kartu Lanjut'),
+        title: Text('Detail Kartu'),
       ),
       body: Center(
         child: Container(

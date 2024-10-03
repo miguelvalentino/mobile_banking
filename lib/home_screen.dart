@@ -42,35 +42,17 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => PaymentPage()),
               );
             }),
-            InkWell(
-              onTap: () {
+            GridButton(
+              context,
+              Icons.transfer_within_a_station,
+              'M-Transfer',
+              () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const TransferOptionsPage()),
                 );
               },
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 2.0),
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Icon(Icons.transfer_within_a_station,
-                        size: 40.0, color: Colors.blue),
-                    SizedBox(height: 8.0),
-                    Text(
-                      'M-Transfer',
-                      style: TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
             ),
           ],
         ),
@@ -89,6 +71,7 @@ class HomeScreen extends StatelessWidget {
         onTap: onPressed,
         borderRadius: BorderRadius.circular(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(iconData, size: 40.0, color: Colors.blue),
             const SizedBox(height: 8.0),
