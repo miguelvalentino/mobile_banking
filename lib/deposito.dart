@@ -32,7 +32,7 @@ class _DepoPageState extends State<DepoPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/BG_bank.png"),
+            image: AssetImage("assets/bg_baru.png"),
             fit: BoxFit.cover,
           ),
         ),
