@@ -15,7 +15,7 @@ class MakeAccButton2 extends StatelessWidget {
         padding: EdgeInsets.all(10),
         margin: EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: const Color.fromARGB(255, 0, 183, 255),
           borderRadius: BorderRadius.circular(4)
           ),
         child: const Center(

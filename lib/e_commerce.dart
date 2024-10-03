@@ -9,7 +9,7 @@ class ECommerce extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Pembelian Token PLN"),
-        backgroundColor: Colors.blue, 
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: BoxDecoration(
