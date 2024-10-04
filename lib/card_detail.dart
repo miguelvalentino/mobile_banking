@@ -3,12 +3,21 @@ import 'detailed_card_view.dart';
 import 'package:mobile_banking/buttonsfile/detailed_card_view_button.dart';
 import 'delete_account.dart';
 
-class CardDetailPage extends StatelessWidget {
+class CardDetailPage extends StatefulWidget {
+  const CardDetailPage({super.key});
+
+  @override
+  _CardDetailPageState createState() => _CardDetailPageState();
+}
+
+class _CardDetailPageState extends State<CardDetailPage> {
+  bool isCardBlocked = false; 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Akun Saya'),
+        title: const Text('Akun Saya'),
       ),
       body: Center(
         child: Column(
@@ -24,28 +33,36 @@ class CardDetailPage extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  'assets/detail_kartu.jpg',
+                child: const Image(
+                  image: AssetImage('assets/detail_kartu.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             DetailedViewButton(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DetailedViewPage()),
-                );
+                if (!isCardBlocked) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DetailedViewPage()),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Kartu telah diblokir, tidak bisa melihat detail.'),
+                    ),
+                  );
+                }
               },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () async {
                 bool? result = await Navigator.push(
@@ -53,9 +70,9 @@ class CardDetailPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => DeleteAccountPage()),
                 );
 
-                if (result == true) {
+                if (result == true && context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text('Akun berhasil dihapus'),
                     ),
                   );
@@ -78,6 +95,33 @@ class CardDetailPage extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  isCardBlocked = true; 
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Kartu berhasil diblokir.'),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 125, vertical: 10),
+                backgroundColor: isCardBlocked ? Colors.black26 : const Color.fromARGB(255, 255, 0, 0), // Ubah warna tombol jika kartu diblokir
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: Text(
+                isCardBlocked ? 'Kartu Diblokir' : 'Blokir Kartu',
+                style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,),
               ),
             ),
           ],
