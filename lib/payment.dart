@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/buttonsfile/e_com_button.dart';
-import 'package:mobile_banking/e_commerce.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
@@ -14,13 +12,13 @@ class _PaymentPageState extends State<PaymentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pembayaran'),
-        backgroundColor: Colors.blue,
+        title: const Text('Payment'),
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/BG_bank.png"),
+            image: AssetImage("assets/bg_baru.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -28,61 +26,61 @@ class _PaymentPageState extends State<PaymentPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Tombol Pulsa
               ElevatedButton(
                 onPressed: () {
                   _showPaymentOptions(context, 'Pulsa');
                 },
-                child: const Text('Pulsa'),
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 150, vertical: 20),
-                  backgroundColor: Colors.lightBlueAccent,
+                  padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 10),
+                  backgroundColor: const Color.fromARGB(255, 0, 89, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
+                child: const Text(
+                  'Pulsa',
+                  style: TextStyle(color: Colors.white,fontSize: 18),
+                  ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 50),
 
               // Tombol Internet
               ElevatedButton(
                 onPressed: () {
                   _showPaymentOptions(context, 'Internet');
                 },
-                child: const Text('Internet'),
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 150, vertical: 20),
-                  backgroundColor: Colors.lightBlueAccent, 
+                  padding: const EdgeInsets.symmetric(horizontal: 150, vertical: 10),
+                  backgroundColor: const Color.fromARGB(255, 0, 89, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
                 ),
+                child: const Text(
+                  'Internet',
+                  style: TextStyle(color:Colors.white, fontSize: 18 ), 
+                  ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 50),
 
               // Tombol Pajak
               ElevatedButton(
                 onPressed: () {
                   _showPaymentOptions(context, 'Pajak');
                 },
-                child: const Text('Pajak'),
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 150, vertical: 20),
-                  backgroundColor: Colors.lightBlueAccent, 
+                  padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 10),
+                  backgroundColor: const Color.fromARGB(255, 0, 89, 255),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: const Text(
+                  'Pajak',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
-
-                //sementara buat tombol ecom pln
-                const SizedBox(height: 20),
-                EComButton(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ECommerce(),
-
-                      ),
-                    );
-                  },
-                ),
-
+              const SizedBox(height: 100),
             ],
           ),
         ),
@@ -90,17 +88,17 @@ class _PaymentPageState extends State<PaymentPage> {
     );
   }
 
-  void _showPaymentOptions(BuildContext context, String title) {
+  void _showPaymentOptions(BuildContext context, String option) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: MediaQuery.of(context).size.height * 0.5, // 50% of the screen height
+          height: MediaQuery.of(context).size.height * 0.4, 
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Text('Pilih mau beli berapa untuk $title', 
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              const Text('Pilih mau beli berapa ', 
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
               Expanded(
@@ -109,6 +107,8 @@ class _PaymentPageState extends State<PaymentPage> {
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   children: const [
+                    _PriceButton(price: 'Rp.5.000'),
+                    _PriceButton(price: 'Rp.10.000'),
                     _PriceButton(price: 'Rp.20.000'),
                     _PriceButton(price: 'Rp.50.000'),
                     _PriceButton(price: 'Rp.80.000'),
@@ -141,7 +141,7 @@ class __PriceButtonState extends State<_PriceButton> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.lightBlueAccent,
-        borderRadius: BorderRadius.circular(8), // Sudut melingkar kecil
+        borderRadius: BorderRadius.circular(8), 
       ),
       child: ElevatedButton(
         onPressed: () {
@@ -164,8 +164,8 @@ class __PriceButtonState extends State<_PriceButton> {
       builder: (BuildContext context) {
         Future.delayed(const Duration(seconds: 5), () {
           if (mounted) {
-            Navigator.of(context).pop(); // Close the success dialog
-            Navigator.of(context).pop(); // Close the bottom sheet
+            Navigator.of(context).pop(); 
+            Navigator.of(context).pop(); 
           }
         });
         return AlertDialog(
