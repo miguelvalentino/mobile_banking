@@ -4,8 +4,9 @@ import 'package:mobile_banking/payment.dart';
 import 'package:mobile_banking/buttonsfile/button_Daftar.dart';
 import 'package:mobile_banking/buttonsfile/button_Transfer.dart';
 import 'package:mobile_banking/page_ecom.dart';
-import 'daftar-transfer.dart';
-import 'transfer.dart';
+import '../daftar-transfer.dart';
+import '../transfer.dart';
+import '../login_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,7 +16,20 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 53, 97),
       appBar: AppBar(
-        title: const Text('placeholder'),
+        title: const Text('Home Page'),
+        actions:[
+          IconButton(
+            icon:const Icon(
+              Icons.logout,
+              color: Colors.red,
+            ),
+            onPressed:(){
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder:(context)=>const LoginPage()),
+              );
+            },
+          )
+        ]
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -40,7 +54,7 @@ class HomeScreen extends StatelessWidget {
             GridButton(context, Icons.payment, 'Payment', () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PaymentPage()),
+                MaterialPageRoute(builder: (context) => const PaymentPage()),
               );
             }),
             GridButton(

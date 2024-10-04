@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/bank_home_page.dart';
+import 'package:mobile_banking/screens/bank_home_page.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
