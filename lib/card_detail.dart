@@ -110,8 +110,8 @@ class _CardDetailPageState extends State<CardDetailPage> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 133, vertical: 10),
-                backgroundColor: isCardBlocked ? Colors.black26 : const Color.fromARGB(255, 255, 0, 0), // Ubah warna tombol jika kartu diblokir
+                padding: const EdgeInsets.symmetric(horizontal: 133, vertical: 9),
+                backgroundColor: isCardBlocked ? Colors.black26 : const Color.fromARGB(255, 255, 0, 0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
