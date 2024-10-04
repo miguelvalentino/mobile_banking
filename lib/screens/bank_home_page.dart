@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
-import 'transfer.dart';
-import 'card_detail.dart';
-import 'screens/notification.dart';
+import '../transfer.dart';
+import '../card_detail.dart';
+import 'notification.dart';
 
 
 class BankHomePage extends StatefulWidget {
