@@ -86,6 +86,7 @@ class _MutasiPageState extends State<MutasiPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Mutasi Rekening'),
