@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/buttonsfile/e_com_button.dart';
 
-class ECommerce extends StatelessWidget {
-  const ECommerce({super.key});
+class ECommerce extends StatefulWidget {
+  ECommerce({super.key});
+
+  @override
+  _ECommerceState createState() => _ECommerceState();
+}
+
+class _ECommerceState extends State<ECommerce> {
+  final plnController = TextEditingController();
+  String? selectedNominal;
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +47,7 @@ class ECommerce extends StatelessWidget {
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
               TextField(
+                controller: plnController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   filled: true,
@@ -54,6 +63,7 @@ class ECommerce extends StatelessWidget {
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
               DropdownButtonFormField<String>(
+                value: selectedNominal,
                 items: [
                   DropdownMenuItem(value: '20000', child: Text('Rp20.000')),
                   DropdownMenuItem(value: '50000', child: Text('Rp50.000')),
@@ -72,11 +82,21 @@ class ECommerce extends StatelessWidget {
 
               EComButton(
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text("Sukses"),
-                    ),
-                  );
+                  if (plnController.text.isEmpty || selectedNominal == null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Nomor Pelanggan dan Nominal Token harus diisi!'),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text("Sukses"),
+                      ),
+                    );
+                  }
                 },
               ),
             ],
