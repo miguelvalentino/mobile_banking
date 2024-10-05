@@ -35,46 +35,54 @@ class _TransferPageState extends State<TransferPage> {
       appBar: AppBar(
         title: const Text('Transfer Dana'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            DropdownButtonFormField<AkunBank>(
-              value: _akunTerpilih,
-              decoration: const InputDecoration(
-                labelText: 'Pilih Rekening Tujuan',
-                border: OutlineInputBorder(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/bg_baru.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              DropdownButtonFormField<AkunBank>(
+                value: _akunTerpilih,
+                decoration: const InputDecoration(
+                  labelText: 'Pilih Rekening Tujuan',
+                  border: OutlineInputBorder(),
+                ),
+                isExpanded: true,
+                onChanged: (AkunBank? newValue) {
+                  setState(() {
+                    _akunTerpilih = newValue;
+                  });
+                },
+                items: AccountModel.akunTersimpan.map((AkunBank akun) {
+                  return DropdownMenuItem<AkunBank>(
+                    value: akun,
+                    child: Text('${akun.nama} - ${akun.nomorRekening}'),
+                  );
+                }).toList(),
               ),
-              isExpanded: true,
-              onChanged: (AkunBank? newValue) {
-                setState(() {
-                  _akunTerpilih = newValue;
-                });
-              },
-              items: AccountModel.akunTersimpan.map((AkunBank akun) {
-                return DropdownMenuItem<AkunBank>(
-                  value: akun,
-                  child: Text('${akun.nama} - ${akun.nomorRekening}'),
-                );
-              }).toList(),
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: _nominalController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Nominal Transfer',
-                border: OutlineInputBorder(),
-                prefixText: 'Rp ',
+              const SizedBox(height: 20),
+              TextField(
+                controller: _nominalController,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Nominal Transfer',
+                  border: OutlineInputBorder(),
+                  prefixText: 'Rp ',
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _lakukanTransfer,
-              child: const Text('Kirim Transfer'),
-            ),
-          ],
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _lakukanTransfer,
+                child: const Text('Kirim Transfer'),
+              ),
+            ],
+          ),
         ),
       ),
     );

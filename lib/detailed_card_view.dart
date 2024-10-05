@@ -7,9 +7,14 @@ class DetailedViewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Detail Kartu'),
       ),
-      body: Center(
-        child: Container(
-          color: Colors.white,
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/bg_baru.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -18,7 +23,7 @@ class DetailedViewPage extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
-                    color: Colors.grey[300],
+                    color: Colors.white.withOpacity(0.8),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
@@ -39,7 +44,7 @@ class DetailedViewPage extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(16.0),
                   decoration: BoxDecoration(
-                    color: Colors.grey[300],
+                    color: Colors.white.withOpacity(0.8),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
