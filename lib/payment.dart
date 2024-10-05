@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'phone_number_dialog.dart';
+import 'pajak.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({super.key});
@@ -39,12 +41,11 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
                 child: const Text(
                   'Pulsa',
-                  style: TextStyle(color: Colors.white,fontSize: 18),
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
               ),
               const SizedBox(height: 50),
 
-              // Tombol Internet
               ElevatedButton(
                 onPressed: () {
                   _showPaymentOptions(context, 'Internet');
@@ -58,15 +59,17 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
                 child: const Text(
                   'Internet',
-                  style: TextStyle(color:Colors.white, fontSize: 18 ), 
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
               ),
               const SizedBox(height: 50),
 
-              // Tombol Pajak
               ElevatedButton(
                 onPressed: () {
-                  _showPaymentOptions(context, 'Pajak');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const PajakPage()),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(horizontal: 160, vertical: 10),
@@ -87,13 +90,14 @@ class _PaymentPageState extends State<PaymentPage> {
       ),
     );
   }
+}
 
   void _showPaymentOptions(BuildContext context, String option) {
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
         return Container(
-          height: MediaQuery.of(context).size.height * 0.4, 
+          height: MediaQuery.of(context).size.height * 0.4,
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
@@ -124,7 +128,7 @@ class _PaymentPageState extends State<PaymentPage> {
       },
     );
   }
-}
+
 
 class _PriceButton extends StatefulWidget {
   final String price;
@@ -141,48 +145,28 @@ class __PriceButtonState extends State<_PriceButton> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.lightBlueAccent,
-        borderRadius: BorderRadius.circular(8), 
+        borderRadius: BorderRadius.circular(8),
       ),
       child: ElevatedButton(
         onPressed: () {
-          _showSuccessMessage(context);
+          _showPhoneNumberDialog(context);
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
         ),
         child: Center(
-          child: Text(widget.price, style: const TextStyle(fontSize: 16)),
+          child: Text(widget.price, style: const TextStyle(fontSize: 16, color: Colors.white)),
         ),
       ),
     );
   }
 
-  void _showSuccessMessage(BuildContext context) {
+  void _showPhoneNumberDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        Future.delayed(const Duration(seconds: 5), () {
-          if (mounted) {
-            Navigator.of(context).pop(); 
-            Navigator.of(context).pop(); 
-          }
-        });
-        return AlertDialog(
-          title: const Text('Pembayaran Berhasil'),
-          content: const Text('Pembayaran Anda telah berhasil.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                if (mounted) {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop();
-                }
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
+        return PhoneNumberDialog(price: widget.price);
       },
     );
   }
