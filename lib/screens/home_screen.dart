@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
             ),
              GridButton(
               context,
-              Icons.transfer_within_a_station,
+              Icons.shopping_bag,
               'E-commerce',
               () {
                 Navigator.push(
