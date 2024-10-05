@@ -13,7 +13,7 @@ class MakeAccPage  extends StatelessWidget{
   final emailController = TextEditingController();
   final nameController = TextEditingController();
   final nikController = TextEditingController();
-  final phoneController = TextEditingController();
+  final telpController = TextEditingController();
 
   // This widget is the root of your application.
   @override
@@ -59,6 +59,7 @@ class MakeAccPage  extends StatelessWidget{
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Email',
                   enabledBorder: OutlineInputBorder(
@@ -74,10 +75,11 @@ class MakeAccPage  extends StatelessWidget{
             ),
             
             const SizedBox(height: 15),
-              //username
+              //nama lengkap
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                   hintText: 'Nama Lengkap',
                   enabledBorder: OutlineInputBorder(
@@ -97,6 +99,7 @@ class MakeAccPage  extends StatelessWidget{
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: nikController,
                 decoration: InputDecoration(
                   hintText: 'NIK',
                   enabledBorder: OutlineInputBorder(
@@ -116,6 +119,7 @@ class MakeAccPage  extends StatelessWidget{
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: telpController,
                 decoration: InputDecoration(
                   hintText: 'No Telpon',
                   enabledBorder: OutlineInputBorder(
@@ -138,11 +142,11 @@ class MakeAccPage  extends StatelessWidget{
                         if (emailController.text.isEmpty ||
                             nameController.text.isEmpty ||
                             nikController.text.isEmpty ||
-                            phoneController.text.isEmpty) {
+                            telpController.text.isEmpty) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text('Semua bagian harus diisi!'),
-                              backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+                              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
                             ),
                           );
                         } else {
