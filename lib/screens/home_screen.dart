@@ -7,6 +7,7 @@ import 'package:mobile_banking/screens/page_ecom.dart';
 import '../daftar-transfer.dart';
 import '../transfer.dart';
 import 'login_page.dart';
+import 'e_commerce.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -66,6 +67,18 @@ class HomeScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const TransferOptionsPage()),
+                );
+              },
+            ),
+             GridButton(
+              context,
+              Icons.shopping_bag,
+              'E-commerce',
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ECommerce()),
                 );
               },
             ),
