@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/account_info.dart';
-import 'package:mobile_banking/payment.dart';
 import 'package:mobile_banking/buttonsfile/button_Daftar.dart';
 import 'package:mobile_banking/buttonsfile/button_Transfer.dart';
-import 'package:mobile_banking/screens/page_ecom.dart';
 import '../daftar-transfer.dart';
 import '../transfer.dart';
 import 'login_page.dart';
-import 'e_commerce.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -42,16 +39,11 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const PageEcom()),
               );
             }),
-            GridButton(context, Icons.account_circle, 'Account Info', () {
+            GridButton(context, Icons.account_circle, 'Account Info',
+                () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AccInfo()),
-              );
-            }),
-            GridButton(context, Icons.payment, 'Payment', () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const PaymentPage()),
               );
             }),
             GridButton(
