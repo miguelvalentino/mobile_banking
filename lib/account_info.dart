@@ -60,17 +60,6 @@ class AccInfo extends StatelessWidget {
                     );
                   },
                 ),
-                const SizedBox(height: 50),
-                DetailButton(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CardDetailPage(),
-                      ),
-                    );
-                  },
-                ),
               ],
             ),
           ),
