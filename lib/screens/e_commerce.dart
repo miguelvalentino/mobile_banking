@@ -70,7 +70,11 @@ class _ECommerceState extends State<ECommerce> {
                   DropdownMenuItem(value: '100000', child: Text('Rp100.000')),
                   DropdownMenuItem(value: '200000', child: Text('Rp200.000')),
                 ],
-                onChanged: (value) {},
+                onChanged: (value) {
+                setState(() {
+                    selectedNominal = value;
+                  });
+                },
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -87,7 +91,7 @@ class _ECommerceState extends State<ECommerce> {
                       SnackBar(
                         content: Text(
                             'Nomor Pelanggan dan Nominal Token harus diisi!'),
-                        backgroundColor: Colors.red,
+                        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
                       ),
                     );
                   } else {
