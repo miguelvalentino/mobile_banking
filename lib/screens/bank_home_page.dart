@@ -3,6 +3,8 @@ import 'home_screen.dart';
 import '../transfer.dart';
 import '../card_detail.dart';
 import 'notification.dart';
+import '../payment.dart';
+import 'e_commerce.dart';
 
 
 class BankHomePage extends StatefulWidget {
@@ -70,7 +72,7 @@ class _BankHomePageState extends State<BankHomePage>{
           children:<Widget>[
             ListTile(
               leading: const Icon(Icons.question_mark_rounded),
-              title:const Text('placeholder'),
+              title:const Text('Payment'),
               onTap:(){
                 Navigator.of(context).pop();
                 setState((){
@@ -78,12 +80,12 @@ class _BankHomePageState extends State<BankHomePage>{
                 });
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder:(context)=>const Placeholder()),);
+                  MaterialPageRoute(builder:(context)=>const PaymentPage()),);
               }
             ),
             ListTile(
               leading: const Icon(Icons.question_mark_rounded),
-              title:const Text('placeholder'),
+              title:const Text('E-Commerce'),
               onTap:(){
                 Navigator.of(context).pop();
                 setState((){
@@ -91,12 +93,12 @@ class _BankHomePageState extends State<BankHomePage>{
                 });
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder:(context)=>const Placeholder()),);
+                  MaterialPageRoute(builder:(context)=>ECommerce()),);
               }
             ),
             ListTile(
               leading: const Icon(Icons.question_mark_rounded),
-              title:const Text('placeholder'),
+              title:const Text('Transfer'),
               onTap:(){
                 Navigator.of(context).pop();
                 setState((){
@@ -104,7 +106,7 @@ class _BankHomePageState extends State<BankHomePage>{
                 });
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder:(context)=>const Placeholder()),);
+                  MaterialPageRoute(builder:(context)=>const TransferPage()),);
               }
             ),
           ]
