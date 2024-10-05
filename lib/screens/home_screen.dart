@@ -3,10 +3,10 @@ import 'package:mobile_banking/account_info.dart';
 import 'package:mobile_banking/payment.dart';
 import 'package:mobile_banking/buttonsfile/button_Daftar.dart';
 import 'package:mobile_banking/buttonsfile/button_Transfer.dart';
-import 'package:mobile_banking/page_ecom.dart';
+import 'package:mobile_banking/screens/page_ecom.dart';
 import '../daftar-transfer.dart';
 import '../transfer.dart';
-import '../login_page.dart';
+import 'login_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

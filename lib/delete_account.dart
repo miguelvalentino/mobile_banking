@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/login_page.dart';
+import 'package:mobile_banking/screens/login_page.dart';
 
 class DeleteAccountPage extends StatelessWidget {
   @override

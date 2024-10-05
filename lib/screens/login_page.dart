@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/mutasi.dart';
-import 'package:mobile_banking/testing_buttons.dart';
 import 'package:mobile_banking/buttonsfile/login_button.dart';
-import 'package:mobile_banking/buttonsfile/make_acc_button.dart';
-import 'package:mobile_banking/make_acc_page.dart';
+import 'package:mobile_banking/screens/make_acc_page.dart';
 import 'package:mobile_banking/sign_in_screen.dart';
 import 'package:mobile_banking/buttonsfile/make_acc_button1.dart';
 

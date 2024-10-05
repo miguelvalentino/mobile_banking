@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_banking/login_page.dart';
+import 'package:mobile_banking/screens/login_page.dart';
 import 'package:mobile_banking/buttonsfile/make_acc_button2.dart';
 
 
@@ -12,6 +12,11 @@ class MakeAccPage2 extends StatefulWidget {
 
 class _MakeAccPageState extends State<MakeAccPage2> {
   bool _isChecked = false;
+
+  final usernameController = TextEditingController();
+  final jobController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   void _onCheckboxChanged(bool? value) {
     setState(() {
@@ -64,6 +69,7 @@ class _MakeAccPageState extends State<MakeAccPage2> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: usernameController,
                 decoration: InputDecoration(
                   hintText: 'User Name',
                   enabledBorder: OutlineInputBorder(
@@ -79,10 +85,11 @@ class _MakeAccPageState extends State<MakeAccPage2> {
             ),
             
             const SizedBox(height: 15),
-              //
+              //pekerjaan
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                 controller: jobController,
                 decoration: InputDecoration(
                   hintText: 'Pekerjaan',
                   enabledBorder: OutlineInputBorder(
@@ -97,11 +104,12 @@ class _MakeAccPageState extends State<MakeAccPage2> {
               ),
             ),
             
-            //NIK
+            //password
             const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: passwordController,
                 decoration: InputDecoration(
                   hintText: 'Password',
                   enabledBorder: OutlineInputBorder(
@@ -121,6 +129,7 @@ class _MakeAccPageState extends State<MakeAccPage2> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                controller: confirmPasswordController,
                 decoration: InputDecoration(
                   hintText: 'Confirm Password',
                   enabledBorder: OutlineInputBorder(
@@ -140,7 +149,7 @@ class _MakeAccPageState extends State<MakeAccPage2> {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: CheckboxListTile(
                     title: Text(
-                      "Saya menyetujui syarat dan ketentuan",
+                      "Saya menyetujui syarat dan ketentuan yang berlaku",
                       style: TextStyle(color: Colors.black),
                     ),
                     value: _isChecked,
@@ -153,17 +162,39 @@ class _MakeAccPageState extends State<MakeAccPage2> {
             const SizedBox(height: 20,),
             MakeAccButton2(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage(),
+                if (usernameController.text.isEmpty ||
+                            jobController.text.isEmpty ||
+                            passwordController.text.isEmpty ||
+                            confirmPasswordController.text.isEmpty ||
+                            !_isChecked) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Semua bagian harus diisi!'),
+                              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          );
+                        } else if (passwordController.text != confirmPasswordController.text) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Password atau Konfirmasi Password Tidak sama!'),
+                              backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
                   ),
                 );
-              },
-            )
+              }
+            },
+            ),
+            
             ],),
           ),
         ),
-         ),
+        ),
         ],
       ),
     );

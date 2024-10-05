@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mobile_banking/buttonsfile/depositobut.dart';
 import 'package:mobile_banking/buttonsfile/login_button.dart';
-import 'package:mobile_banking/login_page.dart';
+import 'package:mobile_banking/screens/login_page.dart';
 
 void main() {
   runApp(const DepoPage());

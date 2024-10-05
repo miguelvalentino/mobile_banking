@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_banking/buttonsfile/button_pln.dart';
-import 'package:mobile_banking/e_commerce.dart';
+import 'package:mobile_banking/screens/e_commerce.dart';
 
 class PageEcom extends StatelessWidget {
   const PageEcom({super.key});
