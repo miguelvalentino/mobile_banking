@@ -18,47 +18,55 @@ class _DaftarTransferState extends State<DaftarTransfer> {
       appBar: AppBar(
         title: const Text('Daftar Rekening'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _namaController,
-              decoration: const InputDecoration(
-                labelText: 'Nama Pemilik Rekening',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            const SizedBox(height: 10),
-            TextField(
-              controller: _rekeningController,
-              decoration: InputDecoration(
-                labelText: 'Nomor Rekening',
-                border: const OutlineInputBorder(),
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.add),
-                  onPressed: _tambahRekening,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/bg_baru.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: _namaController,
+                decoration: const InputDecoration(
+                  labelText: 'Nama Pemilik Rekening',
+                  border: OutlineInputBorder(),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
-                itemCount: AccountModel.akunTersimpan.length,
-                itemBuilder: (context, index) {
-                  final akun = AccountModel.akunTersimpan[index];
-                  return ListTile(
-                    title: Text(akun.nama),
-                    subtitle: Text(akun.nomorRekening),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.delete),
-                      onPressed: () => _hapusRekening(akun),
-                    ),
-                  );
-                },
+              const SizedBox(height: 10),
+              TextField(
+                controller: _rekeningController,
+                decoration: InputDecoration(
+                  labelText: 'Nomor Rekening',
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.add),
+                    onPressed: _tambahRekening,
+                  ),
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: AccountModel.akunTersimpan.length,
+                  itemBuilder: (context, index) {
+                    final akun = AccountModel.akunTersimpan[index];
+                    return ListTile(
+                      title: Text(akun.nama),
+                      subtitle: Text(akun.nomorRekening),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete),
+                        onPressed: () => _hapusRekening(akun),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

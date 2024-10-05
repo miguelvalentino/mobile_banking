@@ -13,22 +13,19 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 53, 97),
-      appBar: AppBar(
-        title: const Text('Home Page'),
-        actions:[
-          IconButton(
-            icon:const Icon(
-              Icons.logout,
-              color: Colors.red,
-            ),
-            onPressed:(){
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder:(context)=>const LoginPage()),
-              );
-            },
-          )
-        ]
-      ),
+      appBar: AppBar(title: const Text('Home Page'), actions: [
+        IconButton(
+          icon: const Icon(
+            Icons.logout,
+            color: Colors.red,
+          ),
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
+        )
+      ]),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: GridView.count(
@@ -36,6 +33,12 @@ class HomeScreen extends StatelessWidget {
           crossAxisSpacing: 15.0,
           mainAxisSpacing: 15.0,
           children: <Widget>[
+            GridButton(context, Icons.shopping_bag_sharp, 'E-Commerce', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PageEcom()),
+              );
+            }),
             GridButton(context, Icons.account_circle, 'Account Info',
                 () {
               Navigator.push(
@@ -96,27 +99,34 @@ class TransferOptionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Transfer Options'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ButtonDaftar(onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const DaftarTransfer()),
-            );
-          }),
-          const SizedBox(height: 20), // Spasi antara tombol
-          ButtonTransfer(onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const TransferPage()),
-            );
-          }),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/bg_baru.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ButtonDaftar(onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DaftarTransfer()),
+              );
+            }),
+            const SizedBox(height: 20), // Spasi antara tombol
+            ButtonTransfer(onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const TransferPage()),
+              );
+            }),
+          ],
+        ),
       ),
     );
   }
