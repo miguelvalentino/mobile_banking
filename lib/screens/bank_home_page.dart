@@ -4,7 +4,7 @@ import '../transfer.dart';
 import '../card_detail.dart';
 import 'notification.dart';
 import '../payment.dart';
-import 'e_commerce.dart';
+import 'page_ecom.dart';
 
 
 class BankHomePage extends StatefulWidget {
@@ -19,8 +19,8 @@ class _BankHomePageState extends State<BankHomePage>{
   final List<Widget>pages=[
     const HomeScreen(),
     const HomeScreen(),//transaksi
-    NotificationScreen(),//notifikasi
-    CardDetailPage(),//profile
+    const NotificationScreen(),//notifikasi
+    const CardDetailPage(),//profile
   ];
 
   @override
@@ -71,7 +71,7 @@ class _BankHomePageState extends State<BankHomePage>{
           mainAxisSize: MainAxisSize.min,
           children:<Widget>[
             ListTile(
-              leading: const Icon(Icons.question_mark_rounded),
+              leading: const Icon(Icons.payment),
               title:const Text('Payment'),
               onTap:(){
                 Navigator.of(context).pop();
@@ -84,7 +84,7 @@ class _BankHomePageState extends State<BankHomePage>{
               }
             ),
             ListTile(
-              leading: const Icon(Icons.question_mark_rounded),
+              leading: const Icon(Icons.shopping_bag),
               title:const Text('E-Commerce'),
               onTap:(){
                 Navigator.of(context).pop();
@@ -93,11 +93,11 @@ class _BankHomePageState extends State<BankHomePage>{
                 });
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder:(context)=>ECommerce()),);
+                  MaterialPageRoute(builder:(context)=>const PageEcom()),);
               }
             ),
             ListTile(
-              leading: const Icon(Icons.question_mark_rounded),
+              leading: const Icon(Icons.wallet),
               title:const Text('Transfer'),
               onTap:(){
                 Navigator.of(context).pop();
