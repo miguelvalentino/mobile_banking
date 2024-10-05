@@ -16,7 +16,7 @@ class _BankHomePageState extends State<BankHomePage>{
   int curr=0;
   final List<Widget>pages=[
     const HomeScreen(),
-    const TransferPage(),//transaksi
+    const HomeScreen(),//transaksi
     NotificationScreen(),//notifikasi
     CardDetailPage(),//profile
   ];
@@ -27,9 +27,13 @@ class _BankHomePageState extends State<BankHomePage>{
       body:pages[curr],
       bottomNavigationBar:NavigationBar(
         onDestinationSelected:(int index) {
-          setState((){
+          if(index==1){
+            _tranferOptions(context);
+          }else{
+            setState((){
             curr=index;
           });
+          }
         },
         indicatorColor:Colors.black,
         selectedIndex:curr,
@@ -52,6 +56,61 @@ class _BankHomePageState extends State<BankHomePage>{
           ),
         ],
       ),
+    );
+  }
+  void _tranferOptions(BuildContext context){
+    showModalBottomSheet(
+    context: context, 
+    builder: (BuildContext context){
+      return Container(
+        padding: const EdgeInsets.all(16.0),
+        height:200,
+        child:Column(
+          mainAxisSize: MainAxisSize.min,
+          children:<Widget>[
+            ListTile(
+              leading: const Icon(Icons.question_mark_rounded),
+              title:const Text('placeholder'),
+              onTap:(){
+                Navigator.of(context).pop();
+                setState((){
+                  curr=0;
+                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=>const Placeholder()),);
+              }
+            ),
+            ListTile(
+              leading: const Icon(Icons.question_mark_rounded),
+              title:const Text('placeholder'),
+              onTap:(){
+                Navigator.of(context).pop();
+                setState((){
+                  curr=0;
+                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=>const Placeholder()),);
+              }
+            ),
+            ListTile(
+              leading: const Icon(Icons.question_mark_rounded),
+              title:const Text('placeholder'),
+              onTap:(){
+                Navigator.of(context).pop();
+                setState((){
+                  curr=0;
+                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder:(context)=>const Placeholder()),);
+              }
+            ),
+          ]
+        )
+      );
+    }
     );
   }
 }

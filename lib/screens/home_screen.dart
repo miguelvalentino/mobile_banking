@@ -70,18 +70,6 @@ class HomeScreen extends StatelessWidget {
                 );
               },
             ),
-             GridButton(
-              context,
-              Icons.shopping_bag,
-              'E-commerce',
-              () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ECommerce()),
-                );
-              },
-            ),
           ],
         ),
       ),
