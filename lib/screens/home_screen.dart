@@ -16,7 +16,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 0, 53, 97),
-      appBar: AppBar(title: const Text('Home Page'), actions: [
+      appBar: AppBar(title: const Text('Home Page'),
+       actions: [
         IconButton(
           icon: const Icon(
             Icons.logout,
@@ -98,7 +99,7 @@ class HomeScreen extends StatelessWidget {
               label,
               style: const TextStyle(
                   fontSize: 16.0,
-                  color: Colors.white,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold),
             ),
           ],
@@ -116,6 +117,7 @@ class TransferOptionsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Transfer Options'),
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: BoxDecoration(

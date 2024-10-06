@@ -16,6 +16,7 @@ class SignInState extends State<SignInScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login Bank'),
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: BoxDecoration(

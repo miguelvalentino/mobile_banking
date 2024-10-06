@@ -7,6 +7,7 @@ class DeleteAccountPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Hapus Akun Bank'),
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: BoxDecoration(
