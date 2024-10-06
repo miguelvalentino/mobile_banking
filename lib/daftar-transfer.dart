@@ -17,6 +17,7 @@ class _DaftarTransferState extends State<DaftarTransfer> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Daftar Rekening'),
+        backgroundColor: const Color.fromARGB(255, 0, 89, 255),
       ),
       body: Container(
         decoration: const BoxDecoration(
